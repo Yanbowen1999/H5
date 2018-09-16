@@ -1,0 +1,28 @@
+fieldset{
+	width:545px;
+}
+legend{
+	color: red;
+	font-family: "微软雅黑";
+}
+/*#regemail{
+	position: absolute;
+}*/
+#maillist, #register .toemail iframe {
+    background: none repeat scroll 0 0 #fff;
+    border-color: #ccc #ccc #ccc;
+    border-style: none solid solid;
+    display: none;
+    position: absolute;
+    width: 210px;
+}
+
+#maillist ul li{
+    color:#666;
+    cursor:pointer;
+    list-style-type: none;
+}
+
+#maillist ul li:hover{
+    color:#999;
+}

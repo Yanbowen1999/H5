@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+	<meta charset="utf-8"/>
+	<title>音频播放器</title>
+	<link rel="stylesheet" href="css/audio.css" type="text/css"/>
+	<script src="js/aud.js"></script>
+	<div>
+		<ul id="list">
+			<li>伦桑 - 勋章.mp3 
+				<a href="#" rel="music/伦桑 - 勋章.mp3" >播放</a>
+			</li>
+			<li>李宇春 - 千年游.mp3
+				<a  href="#" rel="music/李宇春 - 千年游.mp3" >播放</a>
+			</li>
+			<li>鹿晗 - 虫儿飞.mp3
+				<a href="#" rel="music/鹿晗 - 虫儿飞.mp3" onclick="getAudio()">播放</a>
+			</li>
+		</ul>
+		<button>上一首</button>
+		<audio src="" controls="controls" id="sc">
+			<!--<source src="music/伦桑 - 勋章.mp3" type="audio/mp3"></source>
+			<source src="music/李宇春 - 千年游.mp3" type="audio/mp3"></source>
+			<source src="music/鹿晗 - 虫儿飞.mp3" type="audio/mp3"></source>-->
+			您的浏览器不支持Audio
+		</audio>	
+		<button>下一首</button>
+	</div>
