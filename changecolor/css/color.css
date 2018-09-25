@@ -1,0 +1,32 @@
+fieldset{
+	width: 570px;
+}
+legend{
+	color: red;
+}
+#box{
+	width: 565px;
+	height: 30px;
+	border:solid gainsboro thin;
+}
+.color{
+	width: 18px;
+	height: 18px;
+	float: left;
+	margin: 5px;
+}
+/*#up{
+	/*position: relative;
+	bottom:3px;*/
+	transform: translateY(-5px);
+}*/
+/*#down{}*/
+/*.down{
+	
+}*/
+#write{
+	width: 520px;
+	height: 52px;
+	margin:auto;
+}
+
