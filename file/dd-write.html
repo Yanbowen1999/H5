@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>示例2</title>
+		<style>
+			#dragme{
+				width: 200px; border: 1px solid gray;
+			}
+			#text{
+				width: 200px; height: 200px; border: 1px solid gray;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>简单拖放</h2>
+		<div id="dragme" draggable="true" ondragstart="drag(event)">请拖放</div>
+		<div id="text" ondragover=''></div>
+	</body>
+	<script>
+		function drag(ev){
+			ev.dataTransfer().setData('Text',ev.target.id);
+		}
+		function 
+	</script>
+</html>

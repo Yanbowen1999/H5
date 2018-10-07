@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div{
+			border:2px solid gray;
+			width:180px;
+			height:180px;
+		}
+	</style>
+	<body>
+		<div ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<img src="img/taidi.jpg" id="dragimg" draggable="true" ondragstart="drag(event)"/>
+	</body>
+	<script>
+		function drag(ev){
+			ev.dataTransfer.setData('Text',ev.target.id);
+		}
+		function allowDrop(ev){
+			ev.preventDefault();
+		}
+		function drop(ev){
+			ev.preventDefault();
+			var data=ev.dataTransfer.getData('Text');
+			ev.target.appendChild(document.getElementById(data));
+		}
+		
+	</script>
+</html>
+
