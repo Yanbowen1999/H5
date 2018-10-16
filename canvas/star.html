@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>starsky</title>
+	</head>
+	<body>
+		<canvas id="star"></canvas>
+		<script type="text/javascript">
+			window.onload = function(){
+				var star=document.getElementById("star");
+				var context=star.getContext("2d");
+				star.width=800;
+				star.height=800;
+				context.fillStyle = "black";
+				context.fillRect(0,0,star.width,star.height);
+				for(var i=0;i<100;i++){
+						var r = Math.random()*10+10;
+						var x = Math.random()*star.width;
+						var y = Math.random()*star.height;
+						var a = Math.random()*360;
+						drawStar(context,r/2,r,x,y,a);
+					}
+			}
+			function drawStar(cxt,r,R,x,y,rot){
+				cxt.beginPath();
+				for(var i=0;i<5;i++){
+					cxt.lineTo(Math.cos((18+72*i-rot)/180*Math.PI)*R+x,
+					-Math.sin((18+72*i-rot)/180*Math.PI)*R+y);
+					cxt.lineTo(Math.cos((54+72*i-rot)/180*Math.PI)*r+x,
+					-Math.sin((54+72*i-rot)/180*Math.PI)*r+y);
+				}
+				cxt.closePath();
+				cxt.fillStyle="yellow";
+				cxt.strokeStyle="#fd5";
+				cxt.lineWidth=2;
+				cxt.lineJoin="round";
+				cxt.fill();
+				cxt.stroke();
+			}
+		</script>
+	</body>
+</html>

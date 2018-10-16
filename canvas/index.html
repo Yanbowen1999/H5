@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>画布</title>
+		<style>
+			canvas{
+				border:1px solid red;
+				background-color: palegreen;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="400" height="400"></canvas>
+		<canvas id="circle" width="900" height="400"></canvas>
+		<script>
+			//五角星
+			var c=document.getElementById("canvas");
+			var context=c.getContext('2d');
+			context.moveTo(0,130);
+			context.lineTo(350,130);
+			context.lineTo(70,330);
+			context.lineTo(175,0);
+			context.lineTo(260,330);
+			context.lineTo(0,130);
+			//填充描边
+			context.fillStyle="yellow"
+			context.fill();
+			context.lineWidth=2;
+			context.strokeStyle="cornflowerblue";
+			context.stroke();
+			//另一条
+			context.beginPath();
+			context.moveTo(0,330);
+			context.lineTo(350,330);
+			context.strokeStyle="blue";
+			context.stroke();
+			context.closePath()
+			
+			//圆弧
+			var circle=document.getElementById("circle");
+			var cir=circle.getContext('2d');
+			//cir.arc(100,200,100,0,1.5*Math.PI,true);
+			//cir.stroke();
+			for(var i=0;i<8;i++){
+				cir.beginPath();
+				//8个不同的闭合圆弧
+				//cir.arc(50+110*i,200,50,0,2*Math.PI*(i+1)/8,false);
+				//cir.closePath();//在绘制stroke方法之前可以让圆弧形成闭合回路，之后则只是圆弧不闭合
+				//cir.stroke();
+				//同心圆
+				cir.arc(0,400,40+40*i,0,1.5*Math.PI,true);
+				cir.stroke();
+				cir.closePath();
+				//八卦
+				//右白半圆
+				cir.beginPath();
+				cir.arc(600,200,160,1.5*Math.PI,0.5*Math.PI,false);
+				cir.closePath();
+				//cir.stroke();
+				cir.fillStyle="white";
+				cir.fill();
+				//左黑半圆
+				cir.beginPath();
+				cir.arc(600,200,160,1.5*Math.PI,0.5*Math.PI,true);
+				cir.closePath();
+				cir.fillStyle="black";
+				cir.fill();
+				//上白
+				cir.beginPath();
+				cir.arc(600,120,80,1.5*Math.PI,0.5*Math.PI,true);
+				cir.closePath();
+				cir.fillStyle="white";
+				cir.fill();
+				//下黑
+				cir.beginPath();
+				cir.arc(600,280,80,1.5*Math.PI,0.5*Math.PI,false);
+				cir.closePath();
+				cir.fillStyle="black";
+				cir.fill();
+				//
+				cir.beginPath();
+				cir.arc(600,120,8,0,2*Math.PI);
+				cir.closePath();
+				cir.fillStyle="black";
+				cir.fill();
+				//
+				cir.beginPath();
+				cir.arc(600,280,8,0,2*Math.PI);
+				cir.closePath();
+				cir.fillStyle="white";
+				cir.fill();
+			}
+		</script>
+	</body>
+</html>

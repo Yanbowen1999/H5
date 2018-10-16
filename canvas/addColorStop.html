@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>颜色渐变</title>
+	</head>
+	<body>
+		<canvas id="canvas" width="300" height="300"></canvas>
+		<canvas id="canvas1" width="300" height="300"></canvas>
+	</body>
+	<script>
+		var canvas = document.getElementById("canvas");
+		var context=canvas.getContext("2d");
+		var grd=context.createLinearGradient(0,0,200,0);
+		grd.addColorStop(0,"pink");
+		grd.addColorStop(0.3,"red");
+		grd.addColorStop(0.5,"orange");
+		//grd.addColorStop(1,"green");
+		context.fillStyle=grd;
+		context.fillRect(0,0,200,200);
+		context.fill();
+		
+		var canvas1 = document.getElementById("canvas1");
+		var cot=canvas1.getContext("2d");
+		var image =new Image();
+		image.src="img/taidi.jpg";
+		image.onload=function(){
+			var img=cot.createPattern(image,"repeat");
+			cot.fillStyle=img;
+			cot.strokeStyle="#98FB98";
+			cot.lineWidth=2;
+			cot.fillRect(0,0,500,300);
+			cot.strokeRect(0,0,500,500);
+		}
+	</script>
+</html>

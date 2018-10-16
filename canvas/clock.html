@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>clock</title>
+	</head>
+	<body>
+		<canvas id="canvas" width="1000px" height="1000px"></canvas>
+		<script type="text/javascript">
+			var canvas=document.getElementById("canvas");
+			var context=canvas.getContext("2d");
+			
+			function clock(){
+				//context.clearRect(0,0,400,400);
+				context.clearRect(0,0,1000,1000)
+				//方框
+				context.save();
+				context.beginPath();
+				context.rect(30,30,300,300);
+				context.strokeStyle="red";
+				context.stroke();
+				context.closePath();
+				context.restore();
+				//大圆
+				context.save();
+				context.beginPath();
+				context.arc(180,180,130,0,2*Math.PI);
+				context.lineWidth=5;
+				context.strokeStyle="chartreuse";
+				context.stroke();
+				context.closePath();
+				context.restore();
+				//60
+				context.save();
+				context.beginPath();
+				context.translate(180,180);
+				for(var i=0;i<60;i++){
+					if(i%5==0){
+						context.fillStyle="#FF0000";
+						context.fillRect(105,0,15,3);
+						context.fillStyle="black";	
+					}else{
+						context.fillStyle="black";
+						context.fillRect(110,0,8,2);
+					}
+					context.rotate(6/180*Math.PI);
+					context.fill();
+					context.stroke();
+				}
+				context.closePath();
+				context.restore();
+				//数字刻度
+				context.save();
+				context.translate(180,180);
+				context.beginPath();
+    			context.fillStyle = '#000';
+    			for (var j = 1; j <= 12; j++) {
+        			var theta = (j-3) * (Math.PI * 2) / 12;
+        			var x = 95* Math.cos(theta);
+        			var y = 95* Math.sin(theta);
+        			context.fillText(j, x-4, y+3,15);
+    			}
+    			context.restore();
+				//获得时间
+				var now=new Date();
+				var myhour=now.getHours();
+				var myminute=now.getMinutes();
+				var mysecond=now.getSeconds();
+				var hourR,minuteR,secondR;
+				if(mysecond>=30){
+					secondR=(mysecond-30)*6/180*Math.PI;
+				}if(mysecond<30){
+					secondR=(mysecond+30)*6/180*Math.PI;
+				}
+				if(myminute>=30){
+					minuteR=(myminute-30)*6/180*Math.PI;
+				}if(myminute<30){
+					minuteR=(myminute+30)*6/180*Math.PI;
+				}
+				if(myhour>=6&&myhour<12){
+					hourR=(myhour-6+myminute/60)*30/180*Math.PI;
+				}if(myhour<6||(myhour>12&&myhour<18)){
+					hourR=(myhour+6+myminute/60)*30/180*Math.PI;
+				}if(myhour>=18){
+					hourR=(myhour-18+myminute/60)*30/180*Math.PI;
+				}
+				
+				//时针
+				context.save();
+				context.translate(180,180);
+				context.beginPath();
+				context.rotate(hourR);
+				context.fillStyle="purple";
+				context.fillRect(-1.5,0,3,60);
+				context.stroke();
+				context.closePath();
+				context.restore();
+				//分针
+				context.save();
+				context.translate(180,180);
+				context.beginPath();
+				context.rotate(minuteR);
+				context.fillStyle="pink";
+				context.fillRect(-1.5,-10,3,75);
+				context.closePath();
+				context.restore();
+				//秒针
+				context.save();
+				context.translate(180,180);
+				context.beginPath();
+				context.rotate(secondR);
+				context.fillStyle="red";
+				context.fillRect(-1.5,-10,3,90);
+				context.closePath();
+				
+				context.beginPath();
+				context.fillStyle="red";
+				context.arc(-1,60,4,0,2*Math.PI);
+				context.strokeStyle="red";
+				context.lineWidth=3;
+				context.stroke();
+				context.closePath();
+				context.beginPath();
+				context.arc(-1,60,2.5,0,2*Math.PI);
+				context.fillStyle="black";
+				context.fill();
+				context.closePath();
+				context.restore();
+				//圆心
+				context.save();
+				context.beginPath();
+				context.translate(180,180);
+				context.arc(0,0,4,0,2*Math.PI);
+				context.strokeStyle="red";
+				context.lineWidth=3;
+				context.stroke();
+				context.closePath();
+				//点
+				context.beginPath();
+				context.arc(0,0,2.5,0,2*Math.PI);
+				context.fillStyle="black";
+				context.fill();
+				context.closePath();
+				context.restore();
+				
+			}
+			setInterval(clock,1000);
+		</script>
+	</body>
+</html>
