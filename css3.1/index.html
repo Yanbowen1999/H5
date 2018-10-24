@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>选择器</title>
+		<style type="text/css">
+			[id ^="sub"]{
+				background-color: blueviolet;
+			}
+			[id $="-l"]{
+				background-color: green;
+			}
+			p{
+				height: 20px;
+			}
+			div[id *="section1"]{
+				background-color: papayawhip;
+				text-shadow: 2px 1px 5px orange;
+			}
+			a[href $="/"]:before{
+				content:" 百度";
+				color:red;
+			}
+			li:first-child{
+				background-color:plum;
+			}
+			li:last-child{
+				background-color: powderblue;
+			}
+			li:nth-child(2){
+				background-color: pink;
+			}
+			#shadow{
+				background-color: black;
+				color:red;
+				text-shadow: 0px 0px 4px white,
+							0px -5px 4px #ff3
+							/*20px 20px orange*/
+				;
+			}
+			#s1{
+				background-color: #ccc;
+				color: #d1d1d1;
+				font-family: helvetica,arial;
+				font-size: 40px;
+				font-weight: bold;
+				text-shadow: -1px -1px white,1px 1px black;
+			}
+			#s2{
+				background-color: #ccc;
+				/*font-family: helvetica,arial;*/
+				font-family: WebFont;
+				font-size: 40px;
+				font-weight: bold;
+				color: #d1d1d1;
+				text-shadow: -1px 0px black,
+							1px 0px  black,
+							0px 1px black,
+							0px -1px black;
+			}
+			#word{
+				width:90px;
+				border:1px solid;
+				font-family: WebFont;
+				/*word-wrap: break-word;*/
+				word-break: break-all;
+			}
+			@font-face{
+				font-family: WebFont;
+				src:url('webfontkit/singlemalta-webfont.ttf');
+				font-weight: normal;
+			}
+			h1{
+				font-family: WebFont;
+			}
+			#bgimage{
+				width:500px;
+				height:300px;
+				padding: 20px 30px;
+				border:5px solid;
+				background: url(img/lh.jpg),url(img/star_empty.ico),url(img/bg.jpg);
+				/*background-size:100% 100%;*/
+				/*background-size:100px 100px;*/
+				background-size:contain,100px 100px,cover;
+				background-position:  left top,right bottom,right;
+				/*background-origin: content-box;*/
+				background-repeat: no-repeat;
+				background-clip: border-box;
+				border-radius: 10px;
+				border-image: url(img/flower.png)20 20 20 20;
+			}
+			#bgimage p{
+				border:1px solid;
+				border-radius: 20px/10px;
+								/*椭圆*/
+			}
+			#color{
+				width: 200px;
+				height: 200px;
+				border-radius: 5px;
+				background:linear-gradient(45deg,transparent 50px,lightgreen 0px);
+				                                 /*透明色   到50px         <50即形成切角不会过渡渐变         */
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="section1">示例文本1</div>
+		<div id="section1-1">示例文本2</div>
+		<div id="section1-2">示例文本3</div>
+		<div id="subsection2">示例文本4</div>
+		<p id="section1-l">示例文本5</p>
+		<a href="https://www.baidu.com/">网页</a>
+		<ul>
+			<li>111111</li>
+			<li>111111</li>
+			<li>111111</li>
+			<li>111111</li>
+		</ul>
+		<div id="shadow">文字阴影</div>
+		<div id="s1">立体HTML5+CSS3</div>
+		<div id="s2">描边HTML5+CSS3</div>
+		<div id="word">
+			This is a veryveryveryveryveryvery long paragrah
+		</div>
+		<h1>
+			Font-face-WebFontHTML5+CSS3
+		</h1>
+		<div id="bgimage">
+			<p>CSS3 包含多个新的背景属性，提供了对背景更强大的控制。
+				background-size,background-origin,background-clip,使用多重背景图片</p>
+		</div>
+		<div id="color">
+			
+		</div>
+	</body>
+</html>
