@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>弹性布局</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding:0;
+			}
+			#container{
+				display: flex;
+				flex-direction: row;
+				/*width:350px;
+				flex-wrap: wrap;*/
+				width: 1000px;
+				height:400px;
+				border: 1px lightcoral solid;
+				justify-content:space-between;
+				/*align-items:flex-start;*/
+			}
+			#div1{
+				width:200px;
+				padding: 20px;
+				background-color: #00B3FF;
+			}
+			#div2{
+				width:200px;
+				padding: 20px;
+				background-color:#1883BA;
+			}
+			#div3{
+				width:300px;
+				padding: 10px;
+				background-color:#DDA0DD;
+			}
+			ul{
+				list-style: none;
+			}
+			#con1{
+				width:660px;
+				margin: 10px;
+				border: 2px pink solid;
+				display:flex;
+			}
+			#con1 li{
+				border:1px #00B3FF solid;
+				text-align: center;
+				flex: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="div1">弹性布局display:flex(inline-flex)</div>
+			<div id="div2">基本概念flex container,flex item</div>
+			<div id="div3">
+				<ul>容器属性
+					<li>flex-direction —— 定义子元素在主轴的排列方式</li>
+					<li>flex-wrap —— 定义子元素在一条轴线排不下时如何换行</li>
+					<li>justify-content —— 定义子元素在主轴的对齐方式</li>
+					<li>align-items —— 定义子元素在纵轴上的对齐方式</li>
+				</ul> 
+			</div>
+		</div>
+		<ul id="con1">
+			<li>公司简介</li>
+			<li>商品展示</li>
+			<li>后台管理</li>
+			<li>企业文化</li>
+			<li>在线咨询</li>
+		</ul>
+	</body>
+</html>

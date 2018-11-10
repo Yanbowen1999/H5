@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>响应式布局</title>
+		<style type="text/css">
+			*{
+				margin: 0 auto;
+				padding: 0;
+			}
+			header{
+				width: 100%;
+				background-color: gainsboro;
+			}
+			footer{
+				width: 100%;
+				background-color: gainsboro;
+				text-align: center;
+			}
+			ul{
+				list-style: none;
+			}
+			#container{
+				display: flex;
+			}
+			#div1{
+				background-color: sandybrown;
+			}
+			#div2{
+				background-color: peachpuff;
+				
+			}
+			#div2 img{
+				width:30%;
+			}
+			#div3{
+				background-color: #00B3FF;
+			}
+		</style>
+	</head>
+	<body>
+		<header>HTML5程序设计基础</header>
+		<div id="container">
+			<div id="div1">
+				<ul>
+					<li>HTML<hr></li>
+					<li>CSS3<hr></li>
+					<li>Bootstrap<hr></li>
+					<li>Others<hr></li>
+				</ul>
+			</div>
+			<div id="div2">
+				<h3>HTML5</h3>
+				<p>万维网的核心语言、标准通用标记语言下的一个应用超文本标记语言（HTML）的第五次重大修改</p>
+				<img src="img/lh.jpg" alt=""/>
+			</div>
+			<div id="div3">
+				<ul>
+					<li>what?</li>
+					<li>where?</li>
+					<li>when?</li>
+				</ul>
+			</div>
+		</div>
+		<footer>版权所有</footer>
+	</body>
+</html>

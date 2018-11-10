@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Bootstrap响应式网页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+    	<link rel="stylesheet" href="css/bootstrap.min.css">
+    	<style type="text/css">
+    		*{
+    			margin: 0 auto;
+    			padding: 0px;
+    		}
+    		.carousel{
+    			margin-top:-20px ;
+    		}
+    		ul{
+    			list-style-type: none;
+    		}
+    		footer{
+    			height: 50px;
+    			background-color:#101010;
+    			color: whitesmoke;
+    		}
+    	</style>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<!--<p></p>-->
+			<nav  id="top" class="navbar navbar-inverse" role="navigation">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-1">
+					    	<span class="sr-only">导航开关</span>
+						    <span class="icon-bar"></span>
+						    <span class="icon-bar"></span>
+						    <span class="icon-bar"></span>
+				    	</button>
+						<span class="glyphicon  glyphicon-bell navbar-brand">Brand</span>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-1">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="#">Link</a></li>
+							<li><a href="#">Link</a></li>
+							<li><a href="#">Link</a></li>
+							<li><a href="#">Link</a></li>
+							<li><a href="#">Link</a></li>
+						</ul>	
+					</div>
+				</div>
+			</nav>
+			<!--轮播图-->
+			<div class="carousel slide" data-ride='carousel' id="generic">
+				<!--指示标-->
+				<ol class="carousel-indicators">
+					<li data-target='#generic' data-slide-to='0' class="active"></li>
+					<li data-target='#generic' data-slide-to='1'></li>
+					<li data-target='#generic' data-slide-to='2'></li>
+					<li data-target='#generic' data-slide-to='3'></li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="img/banner.jpg" alt="banner">
+						<div class="carousel-caption">
+						</div>
+					</div>
+					<div class="item">
+						<img src="img/banner1.jpg" alt="banner1">
+						<div class="carousel-caption">
+							<h3>轮播图1</h3>
+						</div>
+					</div>
+					<div class="item">
+						<img src="img/banner2.jpg" alt="banner2">
+						<div class="carousel-caption">
+							<h3>轮播图2</h3>
+						</div>
+					</div>
+					<div class="item">
+						<img src="img/banner3.jpg" alt="banner3">
+						<div class="carousel-caption">
+							<h3>轮播图3</h3>
+						</div>
+					</div>
+				</div>
+				<!--<a href="#generic" class="left carousel-control" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+				<a class="right carousel-control" href="#generic" data-slide="next">
+      				<span class="glyphicon glyphicon-chevron-right"></span>
+    			</a>-->
+			</div>
+		</div>	
+		<div class="container">	
+			<div class="content">
+				<div class="col-xs-6 col-md-4">
+					<h3>Content area1<small>The first</small></h3>
+					<p>
+						Many of our components require the use of JavaScript to function. Specifically, they require jQuery,
+						 Popper.js, and our own JavaScript plugins. Place the following scripts near the end of your pages, 
+					</p>
+				</div>
+				<div class="col-xs-6 col-md-4">
+					<h3>Content area2<small>The second</small></h3>
+					<p>
+						Introduction Get started with Bootstrap, the world’s most popular framework for building responsive, mobile-first sites, 
+						with BootstrapCDN and a template starter page.
+					</p>
+				</div>
+				<div class="col-xs-6 col-md-4">
+					<h3>Content area3<small>The third</small></h3>
+					<p>
+						Quick start Looking to quickly add Bootstrap to your project? Use BootstrapCDN, provided for free by the folks at StackPath. 
+						Using a package manager or need to download the source files? Head to the downloads page.
+					</p>
+				</div>
+			</div>
+			<div class="tableb">
+				<h3>Report Table<small>From detail</small></h3>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>first</th>
+							<th>second</th>
+							<th>third</th>
+							<th>forth</th>
+							<th>fifth</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>container</td>
+							<td>nav</td>
+							<td>carousel</td>
+							<td>table</td>
+							<td><button type="button" class="btn btn-success">提交</button></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>navbar</td>
+							<td>control</td>
+							<td>caption</td>
+							<td>indicators</td>
+							<td><button type="button" class="btn btn-success">提交</button></td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>content</td>
+							<td>data</td>
+							<td>target</td>
+							<td>slide</td>
+							<td><button type="button" class="btn btn-success">提交</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<img src="img/pic.jpg" alt="photo"/>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<h3>Get started with Bootstrap, the world’s most popular framework for building responsive</h3>
+				<h5>Looking to quickly add Bootstrap to your project? Use BootstrapCDN, provided for free by the folks at StackPath. Using a package manager or need to download the source files?</h5>
+				<div class="col-xs-6 col-md-6">
+					<ul>
+						<li>A simple primary alert,check it out!</li>
+						<li>A simple primary alert,check it out!</li>
+						<li>A simple primary alert,check it out!</li>
+						<li>A simple primary alert,check it out!</li>
+						<li>A simple primary alert,check it out!</li>
+						<li>A simple primary alert,check it out!</li>
+					</ul>
+				</div>
+				<div class="col-xs-6 col-md-6">
+					<img src="img/1.jpg"/>
+				</div>
+			</div>
+			<!--Image Show-->
+			<div class="col-sm-12 col-md-8">
+				<h3>Image Show<small>Images</small></h3>
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<img src="img/2.jpg" alt="image"/>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<img src="img/3.jpg"/>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<img src="img/4.jpg"/>
+				</div>
+				<p>Containers are the most basic layout element in Bootstrap and are required when using our default grid system.Choose from a responsive, 
+					fixed-width container.</p>
+			</div>
+			<div class="col-sm-12 col-md-4">
+				<h3>User Login<small>Form</small></h3>
+				<form role="form" class="form-horizontal">
+					<div class="form-group">
+						<label for='email0' class="control-label col-sm-3">Email</label>
+						<div class="col-sm-9">
+							<input id='email0' type="email" placeholder="Email" class="form-control"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="Password0" class="col-sm-3 control-label">Password</label>
+				    	<div class="col-sm-9">
+				      		<input type="password" class="form-control" id="Password0" placeholder="Password">
+				    	</div>
+				  	</div>
+				  	<div class="col-sm-3"></div>
+				  	<div class="col-sm-9">
+				  		<div class="form-group">
+				  			<input type="checkbox" name="col" id="col"/><label for="col">blue</label>
+				  			<input type="checkbox" name="col" id="col"/><label for="col">red</label>
+				  		</div>	
+				  		<button type="button" class="btn btn-info"/>Sign in</button>
+				  	</div>
+				  	
+				</form>  
+			</div>	
+		</div>
+		<footer class=" container-fluid">
+			<a href="#top" style="float: right;">返回顶部</a>
+			<h5>网站地图</h5>
+			<h5>copyright@<a>www.xxx.com</a></h5>	
+		</footer>
+		<script src="js/jquery.js"></script>    
+    	<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

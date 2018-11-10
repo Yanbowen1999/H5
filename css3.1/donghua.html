@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>动画</title>
+		<style type="text/css">
+			#nine{
+				width: 306px;
+				height: 300px;
+				float: left;
+			}
+			#nine div{
+				width:100px;
+				height: 100px;
+				float: left;
+				line-height: 100px;
+				text-align: center;
+				border:1px solid black;
+				transition: font-size 1s ease, transform 2s ,background-color 1s ;
+			}#nine div:hover{
+				font-size: 200%;
+				transform: rotate(360deg);
+				background-color: bisque;
+			}
+			#nine div:nth-child(2n+1){
+				background-color: #8A2BE2;
+			}
+			#nine div:nth-child(2n){
+				background-color: #DDA0DD;
+			}
+			#animation{
+				background-color: #00B3FF;
+				/*border-radius:50%;
+				width: 100px;
+				height: 100px;*/
+				text-align: center;
+			}
+			#animation:hover{
+				animation:myRotate 10s ;
+				/*animation-iteration-count: infinite;*/
+			}
+			@keyframes myRotate{
+				0%{transform: rotate(0deg);}
+				30%{transform: rotate(30deg);}
+				70%{transform: rotate(-30deg);}
+				100%{transform: rotate(0deg);}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="nine">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+		</div>
+		<div id="animation">旋转
+		</div>
+	</body>
+</html>
